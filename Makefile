@@ -1,11 +1,15 @@
 ########################################################################
 ####################### Makefile Template ##############################
 ########################################################################
+#boost libraries
+BOOST_ROOT = /Users/stonger/code/gateways/3rdParty/prebuilt/linux-x86_64/boost-1.55.0
+BOOST_INCLUDE = $(BOOST_ROOT)/include
+BOOST_LIB = $(BOOST_ROOT)/lib
 
 # Compiler settings - Can be customized.
 CC = g++
-CXXFLAGS = -std=c++11 -Wall -g
-LDFLAGS = 
+CXXFLAGS = -std=c++17 -Wall -g -I$(BOOST_INCLUDE)
+LDFLAGS =  -L$(BOOST_LIB) -lboost_system -lboost_filesystem
 
 # Makefile settings - Can be customized.
 APPNAME = SimpleList
